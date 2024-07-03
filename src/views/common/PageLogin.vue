@@ -13,6 +13,7 @@
             <p>
               <button type="submit" class="w3-button w3-green w3-round">Login</button>
             </p>
+            <router-link to="/about">회원 가입</router-link> 
           </form>
         </div>
       </div>

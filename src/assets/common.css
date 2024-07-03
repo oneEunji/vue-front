@@ -14,7 +14,24 @@
     padding: 12px 8px;
     border-bottom: 1px solid #eee;
 }
+.common-list {
+    width: 768px;
+    
+    margin: auto;
+}
 
+.common-detail {
+    width: 768px;
+    margin: auto;
+    text-align: left;
+}
+
+.common-contents {
+    width: 508px;
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+    margin: 0 auto;
+}
 .common-buttons {
     padding: 8px;
     text-align: right;
