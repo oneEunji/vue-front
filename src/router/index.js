@@ -17,7 +17,7 @@ const routes = [
     component: PageLogin  //로그인 컴포넌트 추가
   },
   {
-    path: '/about',
+    path: '/signin',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
