@@ -7,20 +7,27 @@
       <thead>
       <tr>
         <th>No</th>
+        <th>썸네일</th>
         <th>제목</th>
         <th>강사명</th>
         <th>상세내역</th>
-        <th>파일코드</th>
         <th>작성일</th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="(row, board_no) in list" :key="board_no">
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_no }}</a></td>
+        <!-- <td>
+          <img v-if="row.thumbnail_url" :src="row.thumbnail_url" alt="썸네일 이미지" width="100">
+          <div v-else style="width: 100px; height: 75px; background-color: #f0f0f0;"></div>
+        </td> -->
+        <td>
+          <img v-if="row.file_url" :src="row.file_url" alt="동영상 이미지" width="100">
+          <div v-else style="width: 100px; height: 75px; background-color: #f0f0f0;"></div>
+        </td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_title }}</a></td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_teacher }}</a></td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_memo }}</a></td>
-        <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.file_code }}</a></td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_CDT }}</a></td>
       </tr>
       </tbody>

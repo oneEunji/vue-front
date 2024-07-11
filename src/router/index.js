@@ -4,6 +4,7 @@ import BoardList from '@/views/board/BoardList.vue'
 import BoardDetail from '@/views/board/BoardDetail.vue'
 import BoardWrite from '@/views/board/BoardWrite.vue'
 import PageLogin from "@/views/common/PageLogin.vue"
+import FileUp from "@/views/file/FileUp.vue"
 
 const routes = [
   {
@@ -17,11 +18,13 @@ const routes = [
     component: PageLogin  //로그인 컴포넌트 추가
   },
   {
+    path: '/test',
+    name: 'FileUp',
+    component: FileUp  //로그인 컴포넌트 추가
+  },
+  {
     path: '/signin',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/PageAbout.vue')
   },
   {
