@@ -5,7 +5,7 @@
         <!-- <button type="button" class="w3-button w3-round w3-red" v-on:click="fnDelete">삭제</button>&nbsp; -->
         <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
       </div>
-      <div class="board-board_memo">
+      <div class="board-memo">
         <h3>{{ board_title }}</h3>
         <div>
           <strong class="w3-large">{{ board_teacher }}</strong>
@@ -13,7 +13,7 @@
           <!-- <span>{{ created_at }}</span> -->
         </div>
       </div>
-      <div class="board-board_memo">
+      <div class="board-memo">
         <span>{{ board_memo }}</span>
       </div>
       <div class="common-buttons">

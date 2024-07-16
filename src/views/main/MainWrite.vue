@@ -1,16 +1,13 @@
 <template>
-  <div class="board-detail">
+  <div class="main-detail">
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnSave">저장</button>&nbsp;
       <button type="button" class="w3-button w3-round w3-gray" v-on:click="fnList">목록</button>
     </div>
-    <div class="board-boardMemo">
-      <input type="text" v-model="boardTitle" class="w3-input w3-border" placeholder="제목을 입력해주세요.">
-      <input type="text" v-model="boardTeacher" class="w3-input w3-border" placeholder="작성자를 입력해주세요." v-if="idx === undefined">
-    </div>
-    <div class="board-boardMemo">
-      <textarea id="" cols="30" rows="10" v-model="boardMemo" class="w3-input w3-border" style="resize: none;">
-      </textarea>
+    <div class="main-Memo">
+      <input type="text" v-model="mainTitle" class="w3-input w3-border" placeholder="제목을 입력해주세요.">
+      <input type="text" v-model="mainAuthor" class="w3-input w3-border" placeholder="작성자를 입력해주세요." v-if="idx === undefined">
+      <input type="text" v-model="mainCtgy" class="w3-input w3-border" placeholder="카테고리를 입력해주세요." v-if="idx === undefined">
     </div>
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnSave">저장</button>&nbsp;
@@ -24,12 +21,10 @@ export default {
   data() { //변수생성
     return {
       requestBody: this.$route.query,
-      idx: this.$route.query.idx,
-
-      boardTitle: '',
-      boardTeacher: '',
-      boardMemo: '',
-      fileCode: ''
+      idx: this.$route.query.idx,  
+      mainTitle: '',
+      mainAuthor: '',
+      mainCtgy: ''
     }
   },
   mounted() {
@@ -38,13 +33,12 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        this.$axios.get(this.$serverUrl + '/board/' + this.idx, {
+        this.$axios.get(this.$serverUrl + '/main/' + this.idx, {
           params: this.requestBody
         }).then((res) => {
-          this.boardTitle = res.data.boardTitle
-          this.boardTeacher = res.data.boardTeacher
-          this.boardMemo = res.data.boardMemo
-          this.fileCode = res.data.fileCode
+          this.mainTitle = res.data.mainTitle
+          this.mainAuthor = res.data.mainAuthor
+          this.mainCtgy = res.data.mainCtgy
         }).catch((err) => {
           console.log(err)
         })
@@ -57,27 +51,31 @@ export default {
         query: this.requestBody
       })
     },
-    fnView(boardNo) {
-      this.requestBody.boardNo = boardNo
+    fnView(mainNo) {
+      this.requestBody.mainNo = mainNo
       this.$router.push({
         path: './detail',
         query: this.requestBody
       })
     },
     fnSave() {
-      let apiUrl = this.$serverUrl + '/board'
+      let apiUrl = this.$serverUrl + '/main'
       this.form = {
         "idx": this.idx,
-        "boardTitle": this.boardTitle,
-        "boardMemo": this.boardMemo,
-        "boardTeacher": this.boardTeacher
+        "mainTitle": this.mainTitle,
+        "mainCtgy": this.mainCtgy,
+        "mainAuthor": this.mainAuthor
       }
+      if (!this.mainTitle || !this.mainAuthor || !this.mainCtgy) {
+            alert('모든 필드를 채워주세요.');
+            return;
+        }
       if (this.idx === undefined) {
-        //INSERT
+        //INSERT        
         this.$axios.post(apiUrl, this.form)
         .then((res) => {
           alert('글이 저장되었습니다.');
-          this.fnView(res.data.boardNo);
+          this.fnView(res.data.mainNo);
         }).catch((err) => {
           if (err.message.indexOf('Network Error') > -1) {
             alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
@@ -88,8 +86,7 @@ export default {
         this.$axios.patch(apiUrl, this.form)
         .then((res) => {
           alert('글이 저장되었습니다.')
-          console.log(res.data.idx);
-          // this.fnView(res.data.idx);
+          this.fnView(res.data.mainNo);
         }).catch((err) => {
           if (err.message.indexOf('Network Error') > -1) {
             alert('네트워크가 원활하지 않습니다.\n잠시 후 다시 시도해주세요.')
@@ -97,6 +94,7 @@ export default {
         })
       }
     }
+    
   }
 }
 </script>
