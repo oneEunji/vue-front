@@ -16,3 +16,6 @@ app
   .use(router)
   .use(store)   //2. store 등록
   .mount('#app')
+
+
+  
