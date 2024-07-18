@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+혹시 api 서버 에러가 난다면 vue.config.js도 확인해주세요 by.eunji
