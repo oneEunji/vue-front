@@ -7,7 +7,6 @@ import MainList from '@/views/main/MainList.vue'
 import MainDetail from '@/views/main/MainDetail.vue'
 import MainWrite from '@/views/main/MainWrite.vue'
 import PageLogin from "@/views/common/PageLogin.vue"
-import FileUp from "@/views/file/FileUp.vue"
 
 const routes = [
   {
@@ -19,11 +18,6 @@ const routes = [
     path: '/login',
     name: 'PageLogin',
     component: PageLogin  //로그인 컴포넌트 추가
-  },
-  {
-    path: '/test',
-    name: 'FileUp',
-    component: FileUp  //로그인 컴포넌트 추가
   },
   {
     path: '/signin',
