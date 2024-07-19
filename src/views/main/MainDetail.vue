@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     fnGetView() {
-      if (!confirm("삭제하시겠습니까?")) return
+      // if (!confirm("삭제하시겠습니까?")) return
       let serverUrl= 'localhost:3001';
       if(!(this.$serverUrl)){
         serverUrl= 'localhost:3001';
