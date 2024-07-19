@@ -54,7 +54,7 @@ export default {
       }
       if(!(this.$serverUrl)){
         console.log(this.$serverUrl);
-        this.$axios.get( "localhost:3001/board/list", {
+        this.$axios.get( "www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com/board/list", {
           params: this.requestBody,
           headers: {}
         }).then((res) => {     

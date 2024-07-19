@@ -33,9 +33,9 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        let serverUrl= 'localhost:3001';
+        let serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
         if(!(this.$serverUrl)){
-          serverUrl= 'localhost:3001';
+          serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
         }else{
           serverUrl= this.$serverUrl;
         }
@@ -65,9 +65,9 @@ export default {
       })
     },
     fnSave() {
-      let serverUrl= 'localhost:3001';
+      let serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
       if(!(this.$serverUrl)){
-        serverUrl= 'localhost:3001';
+        serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
       }else{
         serverUrl= this.$serverUrl;
       }
