@@ -40,7 +40,14 @@ export default {
   },
   methods: {
     fnGetView() {
-      this.$axios.get(this.$serverUrl + '/main/detail/' + this.mainNo, {
+      if (!confirm("삭제하시겠습니까?")) return
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      this.$axios.get(serverUrl + '/main/detail/' + this.mainNo, {
         params: this.requestBody
       }).then((res) => {
         this.main_title = res.data.main_title
@@ -67,8 +74,13 @@ export default {
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-
-      this.$axios.delete(this.$serverUrl + '/main/' + this.mainNo, {})
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      this.$axios.delete(serverUrl + '/main/' + this.mainNo, {})
           .then(() => {
             alert('삭제되었습니다.')
             this.fnList();

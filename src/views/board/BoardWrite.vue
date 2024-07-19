@@ -44,7 +44,14 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        this.$axios.get(this.$serverUrl + '/board/' + this.idx, {
+        let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      let apiUrl = serverUrl + '/board/'
+        this.$axios.get(apiUrl + this.idx, {
           params: this.requestBody
         }).then((res) => {
           this.boardTitle = res.data.boardTitle
@@ -71,7 +78,13 @@ export default {
       })
     },
     fnSave() {
-      let apiUrl = this.$serverUrl + '/board'
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      let apiUrl = serverUrl + '/board'
       this.form = {
         "idx": this.idx,
         "boardTitle": this.boardTitle,
@@ -115,7 +128,13 @@ export default {
         const formData = new FormData();
         formData.append('file', this.file);
         console.log(formData.get('file')); // FormData 확인
-        const response = await axios.post(this.$serverUrl+'/upload', formData, {
+        let serverUrl= 'localhost:3001';
+        if(!(this.$serverUrl)){
+          serverUrl= 'localhost:3001';
+        }else{
+          serverUrl= this.$serverUrl;
+        }
+        const response = await axios.post(serverUrl+'/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

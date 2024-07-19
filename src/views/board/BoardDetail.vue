@@ -49,7 +49,13 @@ export default {
   },
   methods: {
     fnGetView() {
-      axios.get(this.$serverUrl + '/board/detail/' + this.boardNo, {
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      axios.get(serverUrl + '/board/detail/' + this.boardNo, {
         params: this.requestBody
       }).then((res) => {
         this.board_title = res.data.board_title
@@ -64,7 +70,13 @@ export default {
       })
     },
     fetchVideoUrl(fileCode) {
-      axios.get(this.$serverUrl + '/get-video-url/' + fileCode)
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      axios.get(serverUrl + '/get-video-url/' + fileCode)
         .then(response => {
           this.videoUrl = response.data.url;
         })
@@ -87,8 +99,13 @@ export default {
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-
-      axios.delete(this.$serverUrl + '/board/' + this.board_no, {})
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      axios.delete(serverUrl + '/board/' + this.board_no, {})
           .then(() => {
             alert('삭제되었습니다.')
             this.fnList();

@@ -33,7 +33,13 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        this.$axios.get(this.$serverUrl + '/main/' + this.idx, {
+        let serverUrl= 'localhost:3001';
+        if(!(this.$serverUrl)){
+          serverUrl= 'localhost:3001';
+        }else{
+          serverUrl= this.$serverUrl;
+        }
+        this.$axios.get(serverUrl + '/main/' + this.idx, {
           params: this.requestBody
         }).then((res) => {
           this.mainTitle = res.data.mainTitle
@@ -59,7 +65,13 @@ export default {
       })
     },
     fnSave() {
-      let apiUrl = this.$serverUrl + '/main'
+      let serverUrl= 'localhost:3001';
+      if(!(this.$serverUrl)){
+        serverUrl= 'localhost:3001';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+      let apiUrl = serverUrl + '/main'
       this.form = {
         "idx": this.idx,
         "mainTitle": this.mainTitle,

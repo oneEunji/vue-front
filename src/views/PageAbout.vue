@@ -31,16 +31,23 @@ export default {
   methods: {
     fnGetView() {
       if (this.userId !== undefined) {
-        this.$axios.get(this.$serverUrl + '/user/' + this.userId, {
-          params: this.requestBody
-        }).then((res) => {
-          this.userId = res.data.userId
-          this.userPw = res.data.userPw
-          this.userName = res.data.userName
-        }).catch((err) => {
-          console.log(err)
-        })
+        let serverUrl= 'localhost:3001';
+        if(!(this.$serverUrl)){
+          serverUrl= 'localhost:3001';
+        }else{
+          serverUrl= this.$serverUrl;
+        }
+        this.$axios.get(serverUrl + '/user/' + this.userId, {
+              params: this.requestBody
+          }).then((res) => {
+            this.userId = res.data.userId
+            this.userPw = res.data.userPw
+            this.userName = res.data.userName
+          }).catch((err) => {
+            console.log(err)
+          })
       }
+
     },
     fnList() {
       delete this.requestBody.userId
@@ -57,7 +64,13 @@ export default {
       })
     },
     fnSave() {
-      let apiUrl = this.$serverUrl + '/user'
+      let serverUrl= 'localhost:3001';
+        if(!(this.$serverUrl)){
+          serverUrl= 'localhost:3001';
+        }else{
+          serverUrl= this.$serverUrl;
+        }
+      let apiUrl = serverUrl + '/user'
       this.form = {
         "userId": this.userId,
         "userPw": this.userPw,
