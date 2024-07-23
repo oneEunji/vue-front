@@ -18,8 +18,10 @@
       <tr v-for="(row, board_no) in list" :key="board_no">
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_no }}</a></td>
         <td>
+          <a v-on:click="fnView(`${row.board_no}`)">
           <img v-if="row.thumbnail_url" :src="row.thumbnail_url" alt="썸네일 이미지" width="100">
           <div v-else style="width: 100px; height: 75px; background-color: #f0f0f0;"></div>
+          </a>
         </td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_title }}</a></td>
         <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_teacher }}</a></td>
@@ -54,7 +56,13 @@ export default {
       }
       if(!(this.$serverUrl)){
         console.log(this.$serverUrl);
-        this.$axios.get( "localhost:3001/board/list", {
+        let serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+      if(!(this.$serverUrl)){
+        serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+      }else{
+        serverUrl= this.$serverUrl;
+      }
+        this.$axios.get(serverUrl + "/board/list", {
           params: this.requestBody,
           headers: {}
         }).then((res) => {     
