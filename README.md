@@ -35,3 +35,6 @@ module.exports = defineConfig({
     allowedHosts: "all",
   },
 })
+
+
+http://54.180.229.222:3001
