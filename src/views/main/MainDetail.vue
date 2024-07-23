@@ -41,9 +41,9 @@ export default {
   methods: {
     fnGetView() {
       // if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+      let serverUrl= '54.180.229.222:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+        serverUrl= '54.180.229.222:3001';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -74,9 +74,9 @@ export default {
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+      let serverUrl= '54.180.229.222:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com';
+        serverUrl= '54.180.229.222:3001';
       }else{
         serverUrl= this.$serverUrl;
       }

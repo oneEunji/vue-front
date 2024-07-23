@@ -5,7 +5,7 @@ module.exports = defineConfig({
         allowedHosts: "all",
         proxy: {
             '/api': {
-                target: 'http://www.alb-was-386184360.ap-northeast-2.elb.amazonaws.com',
+                target: 'http://54.180.229.222:3001',
                 changeOrigin: true,
                 ws:false,
                 pathRewrite: {
