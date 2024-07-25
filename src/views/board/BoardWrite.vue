@@ -44,9 +44,9 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        let serverUrl= '54.180.229.222:3001';
+        let serverUrl= 'technocratist.com';
       if(!(this.$serverUrl)){
-        serverUrl= '54.180.229.222:3001';
+        serverUrl= 'technocratist.com';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -78,9 +78,9 @@ export default {
       })
     },
     fnSave() {
-      let serverUrl= '54.180.229.222:3001';
+      let serverUrl= 'technocratist.com';
       if(!(this.$serverUrl)){
-        serverUrl= '54.180.229.222:3001';
+        serverUrl= 'technocratist.com';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -128,9 +128,9 @@ export default {
         const formData = new FormData();
         formData.append('file', this.file);
         console.log(formData.get('file')); // FormData 확인
-        let serverUrl= '54.180.229.222:3001';
+        let serverUrl= 'technocratist.com';
         if(!(this.$serverUrl)){
-          serverUrl= '54.180.229.222:3001';
+          serverUrl= 'technocratist.com';
         }else{
           serverUrl= this.$serverUrl;
         }

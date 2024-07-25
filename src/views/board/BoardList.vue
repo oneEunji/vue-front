@@ -15,8 +15,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for="(row, board_no) in list" :key="board_no">
-        <td><a v-on:click="fnView(`${row.board_no}`)">{{ row.board_no }}</a></td>
+      <tr v-for="(row, idx) in list" :key="idx">
+        <td ><a v-on:click="fnView(`${row.board_no}`)">{{ idx + 1 }}</a></td>
         <td>
           <a v-on:click="fnView(`${row.board_no}`)">
           <img v-if="row.thumbnail_url" :src="row.thumbnail_url" alt="썸네일 이미지" width="100">
@@ -56,9 +56,9 @@ export default {
       }
       if(!(this.$serverUrl)){
         console.log(this.$serverUrl);
-        let serverUrl= '54.180.229.222:3001';
+        let serverUrl= 'technocratist.com';
       if(!(this.$serverUrl)){
-        serverUrl= '54.180.229.222:3001';
+        serverUrl= 'technocratist.com';
       }else{
         serverUrl= this.$serverUrl;
       }

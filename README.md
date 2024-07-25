@@ -37,4 +37,4 @@ module.exports = defineConfig({
 })
 
 
-http://54.180.229.222:3001
+http://technocratist.com

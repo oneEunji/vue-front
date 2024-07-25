@@ -5,7 +5,7 @@ module.exports = defineConfig({
         allowedHosts: "all",
         proxy: {
             '/api': {
-                target: 'http://54.180.229.222:3001',
+                target: 'http://technocratist.com',
                 changeOrigin: true,
                 ws:false,
                 pathRewrite: {

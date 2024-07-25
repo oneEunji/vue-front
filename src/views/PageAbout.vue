@@ -31,9 +31,9 @@ export default {
   methods: {
     fnGetView() {
       if (this.userId !== undefined) {
-        let serverUrl= '54.180.229.222:3001';
+        let serverUrl= 'technocratist.com';
         if(!(this.$serverUrl)){
-          serverUrl= '54.180.229.222:3001';
+          serverUrl= 'technocratist.com';
         }else{
           serverUrl= this.$serverUrl;
         }
@@ -64,9 +64,9 @@ export default {
       })
     },
     fnSave() {
-      let serverUrl= '54.180.229.222:3001';
+      let serverUrl= 'technocratist.com';
         if(!(this.$serverUrl)){
-          serverUrl= '54.180.229.222:3001';
+          serverUrl= 'technocratist.com';
         }else{
           serverUrl= this.$serverUrl;
         }

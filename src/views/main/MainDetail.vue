@@ -41,9 +41,9 @@ export default {
   methods: {
     fnGetView() {
       // if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= '54.180.229.222:3001';
+      let serverUrl= 'technocratist.com';
       if(!(this.$serverUrl)){
-        serverUrl= '54.180.229.222:3001';
+        serverUrl= 'technocratist.com';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -74,9 +74,9 @@ export default {
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= '54.180.229.222:3001';
+      let serverUrl= 'technocratist.com';
       if(!(this.$serverUrl)){
-        serverUrl= '54.180.229.222:3001';
+        serverUrl= 'technocratist.com';
       }else{
         serverUrl= this.$serverUrl;
       }
