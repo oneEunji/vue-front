@@ -56,7 +56,7 @@ export default {
         page: this.page,
         size: this.size
       }
-      let serverUrl= 'http://localhost:3001';
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
       if(this.$serverUrl){
         serverUrl= this.$serverUrl;
       }
@@ -85,6 +85,7 @@ export default {
     },
     connectWebSocket() {
       const socket = new WebSocket('ws://localhost:3001');
+      // const socket = new WebSocket('ws://localhost:3001');
 
       socket.onopen = () => {
         console.log('WebSocket connection established');

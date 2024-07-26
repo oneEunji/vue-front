@@ -47,9 +47,9 @@ export default {
         page: this.page,
         size: this.size
       }
-      let serverUrl= 'localhost:3001';
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
       if(!(this.$serverUrl)){
-        serverUrl= 'localhost:3001';
+        serverUrl= process.env.VUE_APP_API_BASE_URL;
       }else{
         serverUrl= this.$serverUrl;
       }

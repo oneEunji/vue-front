@@ -55,7 +55,7 @@ export default {
   methods: {
     fnGetView() {
       if (this.idx !== undefined) {
-        let serverUrl = this.$serverUrl || 'http://localhost:3001';
+        let serverUrl = this.$serverUrl || process.env.VUE_APP_API_BASE_URL;
         let apiUrl = serverUrl + '/board/' + this.idx;
         this.$axios.get(apiUrl, {
           params: this.requestBody
@@ -71,7 +71,7 @@ export default {
       }
     },
     fetchVideoUrl(fileCode) {
-      let serverUrl = this.$serverUrl || 'http://localhost:3001';
+      let serverUrl = this.$serverUrl || process.env.VUE_APP_API_BASE_URL;
       axios.get(`${serverUrl}/get-video-url/${fileCode}`)
         .then(response => {
           this.videoUrl = response.data.url;
@@ -95,7 +95,7 @@ export default {
       });
     },
     fnSave() {
-      let serverUrl = this.$serverUrl || 'http://localhost:3001';
+      let serverUrl = this.$serverUrl || process.env.VUE_APP_API_BASE_URL;
       let apiUrl = serverUrl + '/board';
       this.form = {
         "idx": this.idx,
@@ -140,7 +140,7 @@ export default {
         const formData = new FormData();
         formData.append('file', this.file);
         console.log(formData.get('file')); // FormData 확인
-        let serverUrl = this.$serverUrl || 'http://localhost:3001';
+        let serverUrl = this.$serverUrl || process.env.VUE_APP_API_BASE_URL;
         const response = await axios.post(`${serverUrl}/upload`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'

@@ -49,9 +49,9 @@ export default {
   },
   methods: {
     fnGetView() {
-      let serverUrl= 'localhost:3001';
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
       if(!(this.$serverUrl)){
-        serverUrl= 'localhost:3001';
+        serverUrl= process.env.VUE_APP_API_BASE_URL;
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -70,9 +70,9 @@ export default {
       })
     },
     fetchVideoUrl(fileCode) {
-      let serverUrl= 'localhost:3001';
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
       if(!(this.$serverUrl)){
-        serverUrl= 'localhost:3001';
+        serverUrl= process.env.VUE_APP_API_BASE_URL;
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -99,9 +99,9 @@ export default {
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= 'localhost:3001';
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
       if(!(this.$serverUrl)){
-        serverUrl= 'localhost:3001';
+        serverUrl= process.env.VUE_APP_API_BASE_URL;
       }else{
         serverUrl= this.$serverUrl;
       }

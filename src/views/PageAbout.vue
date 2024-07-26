@@ -31,9 +31,9 @@ export default {
   methods: {
     fnGetView() {
       if (this.userId !== undefined) {
-        let serverUrl= 'localhost:3001';
+        let serverUrl= process.env.VUE_APP_API_BASE_URL;
         if(!(this.$serverUrl)){
-          serverUrl= 'localhost:3001';
+          serverUrl= process.env.VUE_APP_API_BASE_URL;
         }else{
           serverUrl= this.$serverUrl;
         }
@@ -64,9 +64,9 @@ export default {
       })
     },
     fnSave() {
-      let serverUrl= 'localhost:3001';//https://technocratist.com/
+      let serverUrl= process.env.VUE_APP_API_BASE_URL;
         if(!(this.$serverUrl)){
-          serverUrl= 'localhost:3001';
+          serverUrl= process.env.VUE_APP_API_BASE_URL;
         }else{
           serverUrl= this.$serverUrl;
         }
