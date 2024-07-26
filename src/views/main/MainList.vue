@@ -47,9 +47,9 @@ export default {
         page: this.page,
         size: this.size
       }
-      let serverUrl= 'technocratist.com';
+      let serverUrl= 'localhost:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'technocratist.com';
+        serverUrl= 'localhost:3001';
       }else{
         serverUrl= this.$serverUrl;
       }

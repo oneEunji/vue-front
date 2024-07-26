@@ -37,4 +37,4 @@ module.exports = defineConfig({
 })
 
 
-http://technocratist.com
+http://localhost:3001

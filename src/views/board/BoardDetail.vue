@@ -49,9 +49,9 @@ export default {
   },
   methods: {
     fnGetView() {
-      let serverUrl= 'technocratist.com';
+      let serverUrl= 'localhost:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'technocratist.com';
+        serverUrl= 'localhost:3001';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -70,9 +70,9 @@ export default {
       })
     },
     fetchVideoUrl(fileCode) {
-      let serverUrl= 'technocratist.com';
+      let serverUrl= 'localhost:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'technocratist.com';
+        serverUrl= 'localhost:3001';
       }else{
         serverUrl= this.$serverUrl;
       }
@@ -92,16 +92,16 @@ export default {
       })
     },
     fnUpdate() {
-      this.$router.push({
+      this.$router.push({  
         path: './write',
         query: this.requestBody
       })
     },
     fnDelete() {
       if (!confirm("삭제하시겠습니까?")) return
-      let serverUrl= 'technocratist.com';
+      let serverUrl= 'localhost:3001';
       if(!(this.$serverUrl)){
-        serverUrl= 'technocratist.com';
+        serverUrl= 'localhost:3001';
       }else{
         serverUrl= this.$serverUrl;
       }
