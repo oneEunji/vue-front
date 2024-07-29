@@ -1,6 +1,7 @@
 <!-- PageHeader.vue -->
 <template>
     <header>
+      <br><br><br>
       <div id="nav">
         <router-link to="/">Home</router-link> |
         <router-link to="/main/list">강의</router-link> |

@@ -2,7 +2,7 @@
   <div class="board-list">
     <div class="common-buttons">
       <button type="button" class="w3-button w3-round w3-blue-gray" v-on:click="fnWrite">등록</button>
-      <button type="button" class="w3-button w3-round w3-gray" v-on:click="connectWebSocket">WebSocket 연결</button>
+      <!--<button type="button" class="w3-button w3-round w3-gray" v-on:click="connectWebSocket">WebSocket 연결</button>-->
     </div>
     <table class="w3-table-all">
       <thead>
